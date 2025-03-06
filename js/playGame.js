@@ -35,9 +35,12 @@ var PlayGame = function (user1, user2) {
     const resetGame = function () {
         playCount = 0;
         gameBoard.resetGameBoard();
+        currentPlayer=player1;
     }
 
-    // const playRound = function () {
+    //THIS ONLY WORKS FOR THE JS ITSELF.
+
+    // const playRound = function () { 
     //     for (let i = 0; i < 9; i++) {
     //         let currentPlayer;
     //         if (i % 2 == 0) { currentPlayer = player1; }
@@ -70,19 +73,23 @@ var PlayGame = function (user1, user2) {
         if (checkWin(currentPlayer)) {
             console.log(`${currentPlayer.getName()} WINS!`)
             currentPlayer.win();
-            resetGame();
+            // resetGame();
         }
         if (playCount == 9 && !checkWin(currentPlayer)) {
             console.log("DRAW!")
-            resetGame();
+            // resetGame();
         }
+        this.currentPlayer = currentPlayer;
     }
 
     return {
         getPlayers: () => [player1.getName(), player2.getName()],
         getGameBoard: () => gameBoard.getGameBoard(),
-        getScore: () => `${player1.getName()} ${player1.getScore()} : ${player2.getName()} ${player2.getScore()}`,
+        getScore: () => [player1.getScore(), player2.getScore()],
+        resetScore: () => {player1.resetScore(), player2.resetScore()},
         makeMove,
-        resetGame
+        resetGame,
+        getMarker: () => [currentPlayer.getMarker()],
+        getCurrentPlayer: ()=> currentPlayer
     }
 };
