@@ -21,13 +21,14 @@ var PlayGame = function (user1, user2) {
         } return false;
     }
 
-    const getValidLocation = function (row, col) {
+    const getValidLocation = function (row, col) { //return false if invalid, else, valid location.
         const board = gameBoard.getGameBoard();
-        while (true) {
-            if (board[row][col] == null) {
-                return [row, col];
-            }
-            console.log("again");
+        if (board[row][col] == null) {
+            return [row, col];
+        }
+        else {
+            alert("already taken, pick another place");
+            return false;
         }
     }
 
@@ -59,20 +60,22 @@ var PlayGame = function (user1, user2) {
 
     const makeMove = function (row, col) {
         let currentPlayer;
-
         currentPlayer = (playCount % 2 == 0) ? player1 : player2;
-        gameBoard.setMarker(currentPlayer.getMarker(), getValidLocation(row, col));
-        console.table(gameBoard.getGameBoard());
+        if (getValidLocation(row, col) !== false) {
+            gameBoard.setMarker(currentPlayer.getMarker(), getValidLocation(row, col));
+            console.table(gameBoard.getGameBoard());
+            playCount++;
+        }
+
         if (checkWin(currentPlayer)) {
             console.log(`${currentPlayer.getName()} WINS!`)
             currentPlayer.win();
             resetGame();
         }
-        if (playCount == 8 && !checkWin(currentPlayer)) {
+        if (playCount == 9 && !checkWin(currentPlayer)) {
             console.log("DRAW!")
             resetGame();
         }
-        playCount++;
     }
 
     return {
