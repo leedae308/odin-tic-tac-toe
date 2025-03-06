@@ -1,0 +1,67 @@
+:root {
+    font-size: 16px;
+}
+
+dialog:not([open]) {
+    display: none;
+    /* This will completely hide the dialog when it's not opened */
+}
+
+dialog {
+    border: none;
+    display: flex;
+    flex-direction: column;
+
+    width: 100vw;
+    background-color: var(--background-color);
+    justify-content: center;
+    align-items: center;
+}
+
+dialog::backdrop {
+    /* background: rgba(0, 0, 0, 0.7) */
+    backdrop-filter: blur(5px) brightness(0.3); /* 🔥 It works now! */
+}
+
+.result {
+    color: var(--color4);
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.winner {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--dark-color);
+    display: flex;
+
+    align-items: center;
+}
+
+.winner>#changeble {
+    font-size: 5rem;
+    margin-right: 1rem;
+}
+
+dialog button {
+    padding: 1.2rem;
+    margin: 0.3rem;
+    margin-bottom: 1rem;
+    margin-top: 1.3rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--background-color);
+    box-shadow: var(--shadow);
+
+    background-color: var(--color4);
+}
+
+dialog button:hover {
+    opacity: 0.8;
+}
+
+#nextR {
+    background-color: var(--dark-color);
+}

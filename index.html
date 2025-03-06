@@ -9,7 +9,9 @@
     <script src="js/gameBoard.js"></script>
     <script src="js/playGame.js"></script>
     <script src="js/displayModule.js"defer></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="js/dialog.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dialog.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
@@ -41,6 +43,19 @@
             <div class="num"></div>
         </div>  
     </div>
+
+    <dialog class="modal">
+        <div class="result">YOU WON!</div>
+        <div class="winner"><span id="changeble">X</span>TAKES THE ROUND</div>
+        <div>
+            <button id="quit">
+                QUIT
+            </button>
+            <button id="nextR">
+                NEXT ROUND
+            </button>
+        </div>
+    </dialog>
 </body>
 
 </html>
