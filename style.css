@@ -17,12 +17,17 @@
     background-color: var(--background-color);
 }
 
-html, body {
-    height: 100%; /* This makes sure both html and body fill the entire screen */
-    margin: 0; /* Reset default margin */
-    padding: 0; /* Reset default padding */
-    display: flex; /* Optional: If you want to easily center content */
-    justify-content: center; 
+html,
+body {
+    height: 100%;
+    /* This makes sure both html and body fill the entire screen */
+    margin: 0;
+    /* Reset default margin */
+    padding: 0;
+    /* Reset default padding */
+    display: flex;
+    /* Optional: If you want to easily center content */
+    justify-content: center;
     align-items: center;
 }
 
@@ -52,7 +57,7 @@ html, body {
     justify-content: center;
 }
 
-.gameBox:hover{
+.gameBox:hover {
     background-color: var(--shadow-color);
 }
 
@@ -83,66 +88,77 @@ html, body {
     gap: 1rem;
 }
 
-#changeble{
+#changeble {
     color: var(--font-color);
     font-weight: bolder;
     font-size: 2rem;
     justify-self: flex-end;
 }
 
-div.redo{
+div.redo {
     display: grid;
     justify-content: flex-end;
 }
-button.redo{
+
+button.redo {
     aspect-ratio: 1/1;
     background-color: var(--color4);
     width: 100%;
-    border:none;
+    border: none;
     border-radius: 1rem;
     box-shadow: 0 2px 2px 0 color-mix(in srgb, var(--shadow-color), transparent 0%);
 }
 
-.redo > img{
+.redo>img {
     height: 2rem;
     filter: brightness(0) saturate(100%) invert(20%) sepia(7%) saturate(272%) hue-rotate(162deg) brightness(93%) contrast(87%);
 }
 
-button.redo:hover{
+button.redo:hover {
     opacity: 0.5;
 }
 
-.score{
+.score {
     aspect-ratio: 2/1;
     background: var(--color4);
 
     display: grid;
     grid-template-rows: auto auto;
-    justify-items: center; 
+    justify-items: center;
 }
 
 .userName,
-.num{
+.num {
     background-color: transparent;
     color: var(--dark-color);
 }
-.userName{
-    align-self:flex-end;
+
+.userName {
+    align-self: flex-end;
 }
-.num{
+
+.num {
     font-size: 3rem;
     font-weight: bold;
     align-self: flex-start;
 }
 
-.marker{
+.marker {
     font-size: 8rem;
     font-weight: bolder;
 }
 
-.x{
+.x {
     color: var(--font-color);
 }
-.o{
-    color:var(--dark-color);
+
+.o {
+    color: var(--dark-color);
+}
+
+#vs{
+    grid-template-rows:1fr;
+}
+#vs>.num{
+    align-self:center;
 }

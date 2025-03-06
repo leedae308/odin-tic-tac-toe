@@ -16,13 +16,15 @@
             this.redoBtn.addEventListener("click", ()=>{
                 this.gameBoxes.forEach((element)=>{
                     element.innerHTML = "";
-                    this.game.playRound();
+                    this.game.resetGame
+                    // this.game.playRound();
                 });
             });
 
             this.gameBoxes.forEach((element)=>{
                 element.addEventListener("click", (event)=>{
-                    alert([event.target.getAttribute("row"), event.target.getAttribute("col")]);
+                    // alert([event.target.getAttribute("row"), event.target.getAttribute("col")]);
+                    this.game.makeMove(event.target.getAttribute("row"), event.target.getAttribute("col"));
                 })
             })
 
