@@ -1,0 +1,148 @@
+:root {
+    font-size: 16px;
+    font-family: "Exo 2";
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+
+    /* colors: */
+    --font-color: #dfe6da;
+    --shadow-color: #819171;
+    --box-color: #9caf88;
+    --background-color: #758467;
+    --color4: #cbd5c0;
+    --dark-color: #36454f;
+
+    background-color: var(--background-color);
+}
+
+html, body {
+    height: 100%; /* This makes sure both html and body fill the entire screen */
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
+    display: flex; /* Optional: If you want to easily center content */
+    justify-content: center; 
+    align-items: center;
+}
+
+
+.game-container {
+    aspect-ratio: 1/1;
+    width: min(90vmin, 600px);
+    /* Make the whole grid responsive */
+    margin: auto;
+    /* Center it */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 2fr 2fr 1fr;
+    gap: 1.2rem;
+}
+
+.basic {
+    border-radius: 1rem;
+    background-color: var(--box-color);
+    box-shadow: 0 2px 2px 0 color-mix(in srgb, var(--shadow-color), transparent 0%);
+}
+
+.gameBox.basic {
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gameBox:hover{
+    background-color: var(--shadow-color);
+}
+
+.marks {
+    font-size: 3rem;
+    font-weight: bolder;
+    color: var(--font-color);
+
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-left: 0.5rem;
+    align-self: flex-start;
+}
+
+.turn.basic {
+    border-radius: 1rem;
+    aspect-ratio: 3/1;
+
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-self: center;
+
+    color: var(--dark-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    gap: 1rem;
+}
+
+#changeble{
+    color: var(--font-color);
+    font-weight: bolder;
+    font-size: 2rem;
+    justify-self: flex-end;
+}
+
+div.redo{
+    display: grid;
+    justify-content: flex-end;
+}
+button.redo{
+    aspect-ratio: 1/1;
+    background-color: var(--color4);
+    width: 100%;
+    border:none;
+    border-radius: 1rem;
+    box-shadow: 0 2px 2px 0 color-mix(in srgb, var(--shadow-color), transparent 0%);
+}
+
+.redo > img{
+    height: 2rem;
+    filter: brightness(0) saturate(100%) invert(20%) sepia(7%) saturate(272%) hue-rotate(162deg) brightness(93%) contrast(87%);
+}
+
+button.redo:hover{
+    opacity: 0.5;
+}
+
+.score{
+    aspect-ratio: 2/1;
+    background: var(--color4);
+
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-items: center; 
+}
+
+.userName,
+.num{
+    background-color: transparent;
+    color: var(--dark-color);
+}
+.userName{
+    align-self:flex-end;
+}
+.num{
+    font-size: 3rem;
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+.marker{
+    font-size: 8rem;
+    font-weight: bolder;
+}
+
+.x{
+    color: var(--font-color);
+}
+.o{
+    color:var(--dark-color);
+}
