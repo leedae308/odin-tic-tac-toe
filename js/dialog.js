@@ -22,7 +22,7 @@ var dialog = (function () {
 
         quitGame: function(){
             this.dialog.close();
-            window.location.href = "html/mainPage.html"; // Go back to the main page
+            window.location.href = "html/index.html"; // Go back to the main page
             // alert("GAME OVER");
         },
 

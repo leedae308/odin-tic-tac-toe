@@ -24,7 +24,7 @@
         },
 
         openGame: function () {
-            window.location.href = "html/index.html";
+            window.location.href = "html/gamePage.html";
         },
 
         storePlayers: function (player1, player2) {
