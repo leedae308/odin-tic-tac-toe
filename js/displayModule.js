@@ -5,6 +5,8 @@
             this.attachEvents();
             this.game = PlayGame("player1", "player2");
             this.updateCurrentScoreBoard(this.game.getScore(), this.game.getPlayers());
+            this.dialog=dialog;
+            this.dialog.init(this.game, this.resetGame.bind(this));
 
         },
 
@@ -39,7 +41,7 @@
                     this.game.makeMove(row, col);
                     this.updateGameBox(row, col);
                     this.updateUI();
-
+                    this.announceWinner();
                 });
             })
 
@@ -71,7 +73,21 @@
         updateUI: function () {
             this.updateCurrentScoreBoard(this.game.getScore(), this.game.getPlayers());
             this.updateCurrentPlayer(this.game.currentPlayer);
+        },
 
+        announceWinner: function(){
+            if(this.game.checkWin(this.game.currentPlayer)){
+                this.dialog.openDialog(this.game.currentPlayer.getMarker());
+                this.resetGame();
+            }
+            // this.updateUI();
+        },
+        resetGame: function(){
+            this.gameBoxes.forEach((element)=>{
+                element.innerHTML="";
+            });
+            this.game.resetGame();
+            this.updateUI();
         }
 
     };

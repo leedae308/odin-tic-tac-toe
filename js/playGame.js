@@ -90,6 +90,7 @@ var PlayGame = function (user1, user2) {
         makeMove,
         resetGame,
         getMarker: () => [currentPlayer.getMarker()],
-        getCurrentPlayer: ()=> currentPlayer
+        getCurrentPlayer: ()=> currentPlayer,
+        checkWin
     }
 };

@@ -1,0 +1,81 @@
+:root {
+    font-size: 16px;
+}
+
+.main-container {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.submitName {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+}
+
+form {
+    background-color: var(--box-color);
+    padding: 1rem;
+    border: none;
+    border-radius: 0.8rem;
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 1rem;
+
+}
+
+.marks {
+    justify-self: center;
+}
+
+.label {
+    color: var(--dark-color);
+    font-weight: bolder;
+    font-size: 1.5rem;
+    justify-self: center;
+    padding: 0.5rem;
+}
+
+input {
+    border: none;
+    padding: 1rem;
+    background-color: var(--color4);
+    border-radius: 0.8rem;
+    width: 30rem;
+    display: grid;
+    justify-items: center;
+}
+
+.notice {
+    color: var(--dark-color);
+    opacity: 0.8;
+    justify-self: center;
+    padding: 0.5rem;
+}
+
+.createGame {
+    background-color: var(--dark-color);
+    color: var(--color4);
+    font-size: 1.5rem;
+    padding: 1rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    box-shadow:var(--shadow);
+    align-items: center;
+    display: grid;
+    justify-content:center;
+}
+
+.createGame:hover{
+    filter:brightness(0.8);
+}
+
+input[type="text"]{
+    font-size: 2rem;
+    justify-self: center;
+    font-family: "Exo 2";
+    
+}
