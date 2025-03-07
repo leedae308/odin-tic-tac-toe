@@ -3,7 +3,7 @@
         init: function () {
             this.cacheDOM();
             this.attachEvents();
-            this.game = PlayGame("player1", "player2");
+            this.game = PlayGame(localStorage.getItem("player1"), localStorage.getItem("player2"));
             this.updateCurrentScoreBoard(this.game.getScore(), this.game.getPlayers());
             this.dialog=dialog;
             this.dialog.init(this.game, this.resetGame.bind(this));
