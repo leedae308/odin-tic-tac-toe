@@ -19,3 +19,9 @@ JS: DOM, Module Design, object oriented design, local-storage;
 
 ## Class Diagram
 ![class diagram](./images/ClassDiagram_tick-tack-toe.drawio.png)
+
+
+Workes 100% as intended.
+### Future Improvments: 
+Adding play against AI option. 
+
